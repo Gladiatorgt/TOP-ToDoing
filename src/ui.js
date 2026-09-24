@@ -439,8 +439,7 @@ function restOfTheUi() {
   // and mounts the formatted quote into the top header asynchronously.
   // --------------------------------------------------------------------------
   async function quotefns() {
-    const apiKey =
-      typeof process !== "undefined" ? process.env.API_NINJA_KEY : "";
+    const apiKey = process.env.API_NINJA_KEY || "";
 
     if (!apiKey) {
       console.warn("API Ninja key is missing. Quote request skipped.");
